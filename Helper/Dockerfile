@@ -1,5 +1,11 @@
 FROM python:3.11
-WORKDIR /app
-COPY . /app
+
+ENV Helper /app
+
+WORKDIR . /app
+
+COPY . .
+
 RUN pip install -r requirements.txt
-CMD ["python", "helper.py"]
+
+EXPOSE 5000
